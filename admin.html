@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Admin Emergency Dashboard</h1>
+  <ul id="incidentList"></ul>
+
+  <script>
+    // Mock data for received emergencies
+    const emergencies = [
+      { phone: "9876543210", location: "28.7041, 77.1025", severity: "High" },
+      { phone: "9123456789", location: "12.9716, 77.5946", severity: "Medium" }
+    ];
+
+    const incidentList = document.getElementById('incidentList');
+    emergencies.forEach(emergency => {
+      const listItem = document.createElement('li');
+      listItem.innerText = `Emergency from ${emergency.phone}, Location: ${emergency.location}, Severity: ${emergency.severity}`;
+      incidentList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>
